@@ -1,0 +1,21 @@
+.shoji-child {
+    width: 20%;
+}
+
+@media (max-width: 768px) {
+    .shoji-child {
+        width: 25%;
+    }
+    .aang1 {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .shoji-child {
+        width: 33.33%;
+    }
+    .aang1 {
+        display: block;
+    }
+}
