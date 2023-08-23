@@ -18,7 +18,14 @@ code {
 
 @font-face {
   font-family: 'Herculanum';
-  src: local('Herculanum'), url(./fonts/Herculanum-Regular.ttf) format('truetype');
+  src: url('../src/fonts/Herculanum.eot');
+  src: url('../src/fonts/Herculanum.eot?#iefix') format('embedded-opentype'),
+      url('../src/fonts/Herculanum.woff2') format('woff2'),
+      url('../src/fonts/Herculanum.woff') format('woff'),
+      url('../src/fonts/Herculanum.svg#Herculanum') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .font-herculanum {
