@@ -1,6 +1,6 @@
 # 🔥 Introducing "Avatar: The Last API" - Master the Elements with Bending Data! 🔥
 
-Unleash the power of the Django-Stack and dive into the enchanting world of Avatar: The Last Bender with this remarkable API project on GitHub! Delve into the lives of your favorite characters and uncover their captivating details, all in one place.
+Unleash the power of the Django-Stack and dive into the enchanting world of Avatar: The Last Air Bender with this remarkable API project on GitHub! Delve into the lives of your favorite characters and uncover their captivating details, all in one place.
 
 ## Description
 
