@@ -27,7 +27,7 @@ def All_characters(request):
 
      # Check if 'name' parameter is provided, and add it to the query
     if name != 'default_value':
-        query['name'] = name
+        query['name'] = name.capitalize()
 
 
     # Check if 'gender' parameter is provided, and add it to the query
@@ -73,7 +73,7 @@ def Air_data(request):
 
      # Check if 'name' parameter is provided, and add it to the query
     if name != 'default_value':
-        query['name'] = name
+        query['name'] = name.capitalize()
 
 
     # Check if 'gender' parameter is provided, and add it to the query
@@ -102,7 +102,7 @@ def Fire_data(request):
 
      # Check if 'name' parameter is provided, and add it to the query
     if name != 'default_value':
-        query['name'] = name
+        query['name'] = name.capitalize()
 
 
     # Check if 'gender' parameter is provided, and add it to the query
@@ -129,7 +129,7 @@ def Water_data(request):
 
      # Check if 'name' parameter is provided, and add it to the query
     if name != 'default_value':
-        query['name'] = name
+        query['name'] = name.capitalize()
 
 
     # Check if 'gender' parameter is provided, and add it to the query
@@ -156,7 +156,7 @@ def Earth_data(request):
 
      # Check if 'name' parameter is provided, and add it to the query
     if name != 'default_value':
-        query['name'] = name
+        query['name'] = name.capitalize()
 
 
     # Check if 'gender' parameter is provided, and add it to the query
