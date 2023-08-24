@@ -23,3 +23,8 @@ urlpatterns = [
     path('', include("API.urls")),
     path('home/', views.index,name='index')
 ]
+
+# Catch-all pattern for invalid endpoints
+urlpatterns += [
+    re_path(r'^.*$', views.invalid_endpoint),
+]
