@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import airData from "../data/characters/air.json";
 import fireData from "../data/characters/fire.json";
 import waterData from "../data/characters/water.json";
+import earthData from "../data/characters/earth.json";
+import aangIntro from "../data/images/aangIntro.png";
+import "./Characters.css";
 
 function Characters() {
   const [data, setData] = useState([]);
   const [loadCount, setLoadCount] = useState(6);
 
   useEffect(() => {
-    let combinedData = [...airData, ...fireData, ...waterData];
+    let combinedData = [...airData, ...fireData, ...waterData, ...earthData];
     combinedData.sort(() => Math.random() - 0.5);
     setData(combinedData);
   }, []);
@@ -35,30 +38,41 @@ function Characters() {
   };
 
   return (
-    <div className="bg-[#F2C46F] flex items justify-center flex-col p-24">
-      <div className="grid gap-10 grid-cols-3">
+    <div className="bg-[#F2C46F] flex items justify-center flex-col p-6 py-16 lg:p-24 lg:py-24">
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 chars">
         {data
           .filter(
             (item) =>
               item["Fighting styles"] !== "" &&
-              item.Name !== "" &&
-              item.Name.length < 20
+              item.name !== "" &&
+              item["Image-src"] !== ""
           )
           .slice(0, loadCount)
           .map((item, index) => (
-            <div className="rounded-md bg-black" key={index}>
-              <div className="card bg-white rounded-md p-6 translate-x-2 -translate-y-2 border-2 border-black hover:-translate-y-3 hover:translate-x-2 active:translate-x-1 active:translate-y-1 transition-all">
-                <h2 className="text-3xl font-bold p-2">
-                  {capitalizeEveryWord(item.Name)}{" "}
-                  {getEmoji(item["Fighting styles"])}
-                </h2>
-                <p className="p-2">Status: {item.Died ? "Dead" : "Alive"}</p>
-                <p className="p-2">Gender: {item.Gender}</p>
+            <div className="rounded-md bg-gray-800" key={index}>
+              <div className="card h-full bg-white rounded-md translate-x-2 -translate-y-2 border-2 border-black transition-all">
+                <img src={item["Image-src"]} className="w-full rounded-t-md h-60 object-cover" />
+                <div className="p-10">
+                  <h2 className="text-2xl lg:text-3xl font-bold p-1">
+                    {capitalizeEveryWord(item.name)}{" "}
+                    {getEmoji(item["Fighting styles"])}
+                  </h2>
+                  <p className="p-2">Status: {item.Died ? "Dead" : "Alive"}</p>
+                  <p className="p-2">Gender: {item.Gender}</p>
+                </div>
               </div>
             </div>
           ))}
       </div>
-      <button onClick={handleLoadMore}>Load More</button>
+      <div className="flex items-center justify-center p-2 pt-6">
+        <div className="rounded-md bg-black">
+          <button
+            onClick={handleLoadMore}
+            className="p-2 text-lg font-bold bg-white rounded-md border-2 border-black translate-x-1 -translate-y-1 hover:-translate-y-2 active:translate-y-1  duration-300">
+            Load More
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
