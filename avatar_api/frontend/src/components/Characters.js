@@ -38,8 +38,8 @@ function Characters() {
   };
 
   return (
-    <div className="bg-[#F2C46F] flex items justify-center flex-col p-6 py-16 lg:p-24 lg:py-24">
-      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 chars">
+    <div className="bg-[#F2C46F] flex items justify-center items-center flex-col p-6 py-16 lg:p-24 lg:py-24">
+      <div className="grid gap-8 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 chars">
         {data
           .filter(
             (item) =>
@@ -49,16 +49,23 @@ function Characters() {
           )
           .slice(0, loadCount)
           .map((item, index) => (
-            <div className="rounded-md bg-gray-800" key={index}>
+            <div
+              className="rounded-md bg-gray-800 w-5/6 md:w-auto m-auto"
+              key={index}>
               <div className="card h-full bg-white rounded-md translate-x-2 -translate-y-2 border-2 border-black transition-all">
-                <img src={item["Image-src"]} className="w-full rounded-t-md h-60 object-cover" />
-                <div className="p-10">
-                  <h2 className="text-2xl lg:text-3xl font-bold p-1">
+                <img
+                  src={item["Image-src"]}
+                  className="w-full rounded-t-md h-60 object-cover border-b-4 border-black"
+                />
+                <div className="p-2 md:p-6">
+                  <h2 className="text-[27px] lg:text-3xl font-bold p-1 font-herculanum">
                     {capitalizeEveryWord(item.name)}{" "}
                     {getEmoji(item["Fighting styles"])}
                   </h2>
-                  <p className="p-2">Status: {item.Died ? "Dead" : "Alive"}</p>
-                  <p className="p-2">Gender: {item.Gender}</p>
+                  <p className="p-1">
+                    Status: {item.Died ? "Dead" : "Alive"}
+                  </p>
+                  <p className="p-1">Gender: {item.Gender}</p>
                 </div>
               </div>
             </div>

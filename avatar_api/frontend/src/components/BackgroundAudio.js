@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import VolumeHigh from "../data/images/volume-high.svg";
+import VolumeLow from "../data/images/volume-low.svg";
 
 const BackgroundAudio = ({ src }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -10,9 +12,9 @@ const BackgroundAudio = ({ src }) => {
   return (
     <>
       {isPlaying && <audio src={src} autoPlay loop />}
-      <button onClick={toggleAudio}>
-        {isPlaying ? "Turn Off Music" : "Turn On Music"}
-      </button>
+      <div onClick={toggleAudio}>
+        <img src={isPlaying ? VolumeHigh : VolumeLow} alt="Volume" className="w-5 cursor-pointer" />
+      </div>
     </>
   );
 };
