@@ -13,7 +13,11 @@ const BackgroundAudio = ({ src }) => {
     <>
       {isPlaying && <audio src={src} autoPlay loop />}
       <div onClick={toggleAudio}>
-        <img src={isPlaying ? VolumeHigh : VolumeLow} alt="Volume" className="w-5 cursor-pointer" />
+        <img
+          src={isPlaying ? VolumeHigh : VolumeLow}
+          alt="Volume"
+          className="w-5 cursor-pointer"
+        />
       </div>
     </>
   );
